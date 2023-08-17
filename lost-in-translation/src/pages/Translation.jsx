@@ -1,12 +1,14 @@
 import Header from "../components/Header";
+import TranslateInput from "../components/TranslateInput";
 
-const Login = () => {
+const Translation = () => {
     return(
         <div>
             <Header></Header>
             <main>Translation Page</main>
+            <TranslateInput></TranslateInput>
         </div>
     );
 }
 
-export default Login;
+export default Translation;
