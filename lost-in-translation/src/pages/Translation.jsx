@@ -5,7 +5,6 @@ const Translation = () => {
     return(
         <div>
             <Header></Header>
-            <main>Translation Page</main>
             <TranslateInput></TranslateInput>
         </div>
     );

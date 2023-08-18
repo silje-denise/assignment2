@@ -1,4 +1,7 @@
 import { useState } from "react";
+const inputStyle = {backgroundColor: "white", padding: "10px", borderRadius: "10px"};
+const frameStyle = {backgroundColor: "darkred", padding: "30px", borderStyle: "none"}
+const translateButtonStyle = {padding: "8px",  borderRadius: "10px", margin: "2px"}
 
 const Translate = () => {
     const [word, setWord] = useState({ value: ""})
@@ -8,9 +11,9 @@ const Translate = () => {
     }
 
     return(
-        <fieldset>
-            <input type="text" value={word.value} onChange={handleWordChange} />
-            <button type="submit">Translate</button>
+        <fieldset style={frameStyle}>
+            <input style={inputStyle} type="text" value={word.value} onChange={handleWordChange} />
+            <button style={translateButtonStyle} type="submit">Translate</button>
         </fieldset>
     );
 }
