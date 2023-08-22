@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "../components/Header";
-import InputWithBtn from "../components/InputWithBtn";
+import LoginForm from "../components/LoginForm";
 
 const Login = () => {
   /*
@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleOnclick = () => {
     alert(username);
-    getUser();
+    getUser(username);
     // if(){
     // createUser();
     // }
@@ -31,23 +31,34 @@ const Login = () => {
   const apiURL = "https://zenith-oil-snake.glitch.me/";
   const apiKey = process.env.REACT_APP_API_KEY;
 
-  const getUser = () => {
-    fetch(`${apiURL}/translations?username=${username}`)
-      .then((response) => {
-         response.json();
-       })
-      .then((results) => {
-        results.map((r) => {
-          console.log(r);
-          return r;
-        });
+  //   const getUser = () => {
+  //     fetch(`${apiURL}/translations?username=${username}`)
+  //       .then((response) => {
+  //          response.json();
+  //        })
+  //       .then((results) => {
+  //         results.map((r) => {
+  //           console.log(r);
+  //           return r;
+  //         });
 
-        return results;
-        // results will be an array of users that match the username
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  //         return results;
+  //         // results will be an array of users that match the username
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   };
+
+  const getUser = async () => {
+    const response = await fetch(`${apiURL}/translations?username=${username}`);
+    if (response.ok) {
+      const result = await response.json();
+      console.log(result);
+      return result;
+    } else {
+      return response.error;
+    }
   };
 
   const createUser = () => {
@@ -101,8 +112,7 @@ const Login = () => {
       <Header />
       <main style={main}>
         <div style={inputSection}>
-          <label>Let's get started! Type in a username:</label>
-          <InputWithBtn onchange={handleChange} onclick={handleOnclick} />
+            <LoginForm onchange={handleChange} onclick={handleOnclick} />
         </div>
       </main>
     </div>

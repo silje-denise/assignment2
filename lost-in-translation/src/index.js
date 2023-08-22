@@ -6,11 +6,13 @@ import Login from './pages/Login';
 import Translation from './pages/Translation';
 import Profile from './pages/Profile';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import AppContext from './context/AppContext';
 
 
 
   export default function App() {
     return (
+      <AppContext>
       <BrowserRouter>
         <div className="App">
           <Routes>
@@ -20,6 +22,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
           </Routes>
         </div>
       </BrowserRouter>
+      </AppContext>
     )
   } 
   const root = ReactDOM.createRoot(document.getElementById('root'));
