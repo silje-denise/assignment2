@@ -3,90 +3,6 @@ import Header from "../components/Header";
 import LoginForm from "../components/LoginForm";
 
 const Login = () => {
-  /*
-        TODO: 
-            - Connect to API
-            - Add a CreateUser function
-            - Add a GetUser function
-            - Redirect user to /translation page after being logged in
-    */
-
-  const [username, setUsername] = useState("");
-
-  const handleOnclick = () => {
-    alert(username);
-    getUser(username);
-    // if(){
-    // createUser();
-    // }
-
-    //TODO: redirect user to /translations
-  };
-  const handleChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  //Create user---------------------------------
-  //Async-await & try-catch?
-  const apiURL = "https://zenith-oil-snake.glitch.me/";
-  const apiKey = process.env.REACT_APP_API_KEY;
-
-  //   const getUser = () => {
-  //     fetch(`${apiURL}/translations?username=${username}`)
-  //       .then((response) => {
-  //          response.json();
-  //        })
-  //       .then((results) => {
-  //         results.map((r) => {
-  //           console.log(r);
-  //           return r;
-  //         });
-
-  //         return results;
-  //         // results will be an array of users that match the username
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   };
-
-  const getUser = async () => {
-    const response = await fetch(`${apiURL}/translations?username=${username}`);
-    if (response.ok) {
-      const result = await response.json();
-      console.log(result);
-      return result;
-    } else {
-      return response.error;
-    }
-  };
-
-  const createUser = () => {
-    fetch(`${apiURL}/translations`, {
-      method: "POST",
-      headers: {
-        "X-API-Key": apiKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: { username },
-        translations: [],
-      }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Could not create new user");
-        }
-        return response.json();
-      })
-      .then((newUser) => {
-        // newUser is the new user with an id
-        console.log(newUser);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   //Styling
   const main = {
@@ -107,12 +23,13 @@ const Login = () => {
     borderRadius: "15px",
   };
 
+  //The LoginForm takes care of the login
   return (
     <div>
       <Header />
       <main style={main}>
         <div style={inputSection}>
-            <LoginForm onchange={handleChange} onclick={handleOnclick} />
+            <LoginForm />
         </div>
       </main>
     </div>

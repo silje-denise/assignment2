@@ -7,5 +7,6 @@ const Header = () => {
         </header>
     );
 }
+//Replace with ProfileHeader?
 
 export default Header;

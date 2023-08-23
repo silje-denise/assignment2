@@ -1,7 +1,9 @@
 import { useState } from "react";
+
+//Possibly change styling
 const inputStyle = {backgroundColor: "white", padding: "10px", borderRadius: "10px"};
-const frameStyle = {backgroundColor: "darkred", padding: "30px", borderStyle: "none"}
-const translateButtonStyle = {padding: "8px",  borderRadius: "10px", margin: "2px"}
+const frameStyle = {backgroundColor: "darkred", padding: "30px", borderStyle: "none"};
+const translateButtonStyle = {padding: "8px",  borderRadius: "10px", margin: "2px"};
 
 const Translate = () => {
     const [word, setWord] = useState({ value: ""})

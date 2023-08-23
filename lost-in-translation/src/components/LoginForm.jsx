@@ -4,27 +4,18 @@ import { useState, useEffect } from "react";
 import { storageSave } from "../utils/storage";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
+import { STORAGE_KEY_USER } from "../const/storageKeys";
 
+// The user is required to type in a username longer than 2 characters
 const usernameConfig = {
   required: true,
   minLength: 2,
 };
 
 const LoginForm = () => {
-//   const input = {
-//     padding: "5px",
-//     borderRadius: "10px",
-//     fontSize: "20px",
-//     border: "2px solid #ccc",
-//     backgroundColor: "#eee",
-//   };
 
 // Hooks
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const {register,handleSubmit,formState: { errors },} = useForm();
   const {user, setUser} = useUser();
   const navigate = useNavigate();
 
@@ -45,14 +36,15 @@ const LoginForm = () => {
     if (error !== null) {
       setApiError(error);
     }
+    // If user exists, we set the user in the userContext
     if (userResponse !== null) {
-      storageSave("user", userResponse);
+      storageSave(STORAGE_KEY_USER, userResponse);
       setUser(userResponse);
     }
     setLoading(false);
   };
 
-  // Render functions
+  // Return errors if the username does not meet the requirements set in usernameConfig
   const errorMessage = (() => {
     if (!errors.username) {
       return null;
@@ -78,6 +70,7 @@ const LoginForm = () => {
           />
           {errorMessage}
         </fieldset>
+        {/* When the user attempt to log in, the page will load and the button will be disabled until the function returns a response */}
         <button type="submit" disabled={loading}>
           Continue
         </button>
