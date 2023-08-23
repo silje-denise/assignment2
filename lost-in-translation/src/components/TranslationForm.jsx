@@ -1,9 +1,5 @@
 import {useForm} from "react-hook-form";
 
-
-const apiURL = process.env.REACT_APP_API_URL;
-const apiKey = process.env.REACT_APP_API_KEY;
-
 const inputStyle = {
     backgroundColor: "white", 
     padding: "9px", 
