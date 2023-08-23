@@ -7,6 +7,7 @@ import Translation from './pages/Translation';
 import Profile from './pages/Profile';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import AppContext from './context/AppContext';
+import Navbar from './components/Navbar';
 
 
 
@@ -15,6 +16,7 @@ import AppContext from './context/AppContext';
       <AppContext>
       <BrowserRouter>
         <div className="App">
+          <Navbar/>
           <Routes>
             <Route path = "/" element={ <Login/>  } />
             <Route path = "/translation" element={ <Translation/>  } />

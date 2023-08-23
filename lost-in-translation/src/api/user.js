@@ -41,7 +41,7 @@ const apiURL = process.env.REACT_APP_API_URL;
 }
 
 // When the user attempts to login, we first run a check to see if user exists
-// If the user exists, they will be logged in and redirected to /translations
+// If the user exists, they will be logged in and redirected to /translation
 // Else, we will attempt to create a new user and then logg them in
 export const loginUser = async (username) => {
     const [checkError, user] = await checkForUser(username);

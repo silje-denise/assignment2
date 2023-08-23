@@ -25,7 +25,7 @@ const LoginForm = () => {
   // Redirect if user exists
   useEffect(() => {
     if(user !== null){
-        navigate('profile');
+        navigate('translation');
     }
   },[user, navigate]); // Run once
 

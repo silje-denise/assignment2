@@ -12,3 +12,8 @@ export const storageRead = (key) => {
     }
     return null;
 }
+//Delete user information from localStorage
+//This will terminate the session and the user has to log in again in order to reach /translation or /profile
+export const storageDelete = key => {
+    localStorage.removeItem(key);
+}
