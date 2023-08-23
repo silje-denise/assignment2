@@ -1,4 +1,6 @@
 import Header from "../components/Header";
+//import TranslateInput from "../components/TranslateInput";
+import withAuth from "../hoc/withAuth";
 import TranslationForm from "../components/TranslationForm";
 
 
@@ -26,5 +28,5 @@ const Translation = () => {
     );
 }
 
-
-export default Translation;
+// The user can only navigate to this page if they are authenticated/logged in
+export default withAuth(Translation);

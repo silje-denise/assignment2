@@ -1,12 +1,23 @@
 import Header from "../components/Header";
+import ProfileActions from "../components/ProfileActions";
+import ProfileHeader from "../components/ProfileHeader";
+import ProfileTranslationHistory from "../components/ProfileTranslationHistory";
+import withAuth from "../hoc/withAuth";
+import { useUser } from "../context/UserContext";
 
-const Login = () => {
+const Profile = () => {
+
+    const {user} = useUser();
+
     return(
         <div>
             <Header></Header>
-            <main>test</main>
+            <ProfileHeader username={user.username}/>
+            <ProfileActions/>
+            <ProfileTranslationHistory translations={user.translations}/>
         </div>
     );
 }
 
-export default Login;
+// The user can only navigate to this page if they are authenticated/logged in
+export default withAuth(Profile);

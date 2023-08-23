@@ -6,20 +6,23 @@ import Login from './pages/Login';
 import Translation from './pages/Translation';
 import Profile from './pages/Profile';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import AppContext from './context/AppContext';
 
 
 
   export default function App() {
     return (
-        <BrowserRouter>
-          <div className="App">
-            <Routes>
-              <Route path = "/" element={ <Login/>  } />
-              <Route path = "/translation" element={ <Translation/>  } />
-              <Route path = "/profile" element={ <Profile/>  } />
-            </Routes>
-          </div>
-        </BrowserRouter>
+      <AppContext>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path = "/" element={ <Login/>  } />
+            <Route path = "/translation" element={ <Translation/>  } />
+            <Route path = "/profile" element={ <Profile/>  } />
+          </Routes>
+        </div>
+      </BrowserRouter>
+      </AppContext>
     )
   } 
   const root = ReactDOM.createRoot(document.getElementById('root'));
