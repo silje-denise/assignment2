@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<!-- Add: 
+    - contributor
+    - instructions on how to create .env file (if you wanna share keys: add them to Eduflow)
+    - pls comment every function and component in your code
+-->
+
 ## Available Scripts
 
 In the project directory, you can run:
