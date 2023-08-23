@@ -18,11 +18,11 @@ const translateButtonStyle = {
     margin: "2px"
 }
 
-const TranslationForm = ({onOrder}) => {
+const TranslationForm = ({onTranslate}) => {
 
     const{ register, handleSubmit} = useForm()
 
-    const onSubmit = ({TranslationInput}) => { onOrder(TranslationInput)}
+    const onSubmit = ({TranslationInput}) => { onTranslate(TranslationInput)}
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}>

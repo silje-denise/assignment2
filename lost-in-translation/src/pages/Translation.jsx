@@ -9,8 +9,9 @@ import TranslationForm from "../components/TranslationForm";
 const Translation = () => {
 
 
-    const handleTranslationClicked = notes => {
-        console.log(notes)
+    const handleTranslationClicked = translation => {
+        console.log(translation)
+        return translation
     }
 
     return(
@@ -19,7 +20,7 @@ const Translation = () => {
                 <Header></Header>
             </div>
             <div id="TranslateInput">
-                <TranslationForm onOrder={handleTranslationClicked}/>
+                <TranslationForm onTranslate={handleTranslationClicked}/>
             </div>
         </>
     );
