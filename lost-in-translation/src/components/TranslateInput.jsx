@@ -5,7 +5,7 @@ const inputStyle = {backgroundColor: "white", padding: "10px", borderRadius: "10
 const frameStyle = {backgroundColor: "darkred", padding: "30px", borderStyle: "none"};
 const translateButtonStyle = {padding: "8px",  borderRadius: "10px", margin: "2px"};
 
-const Translate = () => {
+const TranslateInput = () => {
     const [word, setWord] = useState({ value: ""})
 
     const handleWordChange = event => {
@@ -20,4 +20,4 @@ const Translate = () => {
     );
 }
 
-export default Translate;
+export default TranslateInput;
