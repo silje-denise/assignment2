@@ -11,15 +11,15 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
   export default function App() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Routes>
-            <Route path = "/" element={ <Login/>  } />
-            <Route path = "/translation" element={ <Translation/>  } />
-            <Route path = "/profile" element={ <Profile/>  } />
-          </Routes>
-        </div>
-      </BrowserRouter>
+        <BrowserRouter>
+          <div className="App">
+            <Routes>
+              <Route path = "/" element={ <Login/>  } />
+              <Route path = "/translation" element={ <Translation/>  } />
+              <Route path = "/profile" element={ <Profile/>  } />
+            </Routes>
+          </div>
+        </BrowserRouter>
     )
   } 
   const root = ReactDOM.createRoot(document.getElementById('root'));
