@@ -2,19 +2,16 @@ import Header from "../components/Header";
 //import TranslateInput from "../components/TranslateInput";
 import withAuth from "../hoc/withAuth";
 import TranslationForm from "../components/TranslationForm";
-
-
-
-//const apiURL = process.env.REACT_APP_API_URL;
-//const apiKey = process.env.REACT_APP_API_KEY;
+//import { useState } from "react";
+import TranslateInput from "../components/TranslateOutput";
 
 const Translation = () => {
 
+    //const [setFormtData] = useState(null);
 
-    const handleTranslationClicked = translation => {
-        console.log(translation)
-        return translation
-    }
+    const handleTranslationClicked = input => {
+        console.log(TranslateInput(input))
+        }
 
     return(
         <>

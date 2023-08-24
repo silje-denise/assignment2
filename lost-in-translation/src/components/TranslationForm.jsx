@@ -22,13 +22,12 @@ const TranslationForm = ({onTranslate}) => {
 
     const{ register, handleSubmit} = useForm()
 
-    const onSubmit = ({TranslationInput}) => { onTranslate(TranslationInput)}
+    const onSubmit = ({TranslationInput}) => {onTranslate(TranslationInput)}
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset style={frameStyle}>
-                <label htmlFor="TranslationInput"></label>
-                <input style={translateButtonStyle} type="text" {...register("TranslationInput")} placeholder="Write here"/>
+                <input style={translateButtonStyle} type="text" {...register("TranslationInput", {required: true})} placeholder="Write here"/>
                 <button style={inputStyle} type="submit">Translate</button>
             </fieldset>
         </form>
