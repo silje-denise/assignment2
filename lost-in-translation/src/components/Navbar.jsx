@@ -3,6 +3,8 @@ import { useUser } from "../context/UserContext";
 
 const Navbar = () => {
   const { user } = useUser();
+
+  //Style
   const navStyle = {
     listStyle: "none",
     backgroundColor: "darkred",
