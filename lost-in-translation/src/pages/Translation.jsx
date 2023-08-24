@@ -3,22 +3,27 @@ import withAuth from "../hoc/withAuth";
 import TranslationForm from "../components/TranslationForm";
 import TranslateInput from "../components/TranslateOutput";
 import { useState } from "react";
+//import { useUser } from "../context/UserContext";
+import { translationAdd } from "../api/translate";
 
-const Translation = () => {
+const Translations = () => {
 
     const [outputState, setOutputState] = useState()
 
-    const handleTranslationClicked = input => {
+    const handleTranslationClicked =  input => {
         setOutputState(TranslateInput(input))
+        return
+    }
 
-        }
+   // const [error, result] = translationAdd(outputState())
+
+   // console.log("Error", error);
+   // console.log("Result", result);
 
     return(
         <>
             <div>
                 <Header></Header>
-            </div>
-            <div>
                 <TranslationForm onTranslate={handleTranslationClicked}/>
                 {outputState}
             </div>
@@ -27,4 +32,4 @@ const Translation = () => {
 }
 
 // The user can only navigate to this page if they are authenticated/logged in
-export default withAuth(Translation);
+export default withAuth(Translations);

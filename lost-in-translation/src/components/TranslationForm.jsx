@@ -1,4 +1,5 @@
 import {useForm} from "react-hook-form";
+import { translationAdd } from "../api/translate";
 
 const inputStyle = {
     backgroundColor: "white", 

@@ -13,4 +13,3 @@ const TranslateInput = (input) => {
     return input_text
 }
 export default TranslateInput;
-
