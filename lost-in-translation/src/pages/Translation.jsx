@@ -1,16 +1,16 @@
 import Header from "../components/Header";
-//import TranslateInput from "../components/TranslateInput";
 import withAuth from "../hoc/withAuth";
 import TranslationForm from "../components/TranslationForm";
-//import { useState } from "react";
 import TranslateInput from "../components/TranslateOutput";
+import { useState } from "react";
 
 const Translation = () => {
 
-    //const [setFormtData] = useState(null);
+    const [outputState, setOutputState] = useState()
 
     const handleTranslationClicked = input => {
-        console.log(TranslateInput(input))
+        setOutputState(TranslateInput(input))
+
         }
 
     return(
@@ -18,8 +18,9 @@ const Translation = () => {
             <div>
                 <Header></Header>
             </div>
-            <div id="TranslateInput">
+            <div>
                 <TranslationForm onTranslate={handleTranslationClicked}/>
+                {outputState}
             </div>
         </>
     );

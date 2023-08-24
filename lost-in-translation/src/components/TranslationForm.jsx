@@ -3,7 +3,8 @@ import {useForm} from "react-hook-form";
 const inputStyle = {
     backgroundColor: "white", 
     padding: "9px", 
-    borderRadius: "10px"
+    borderRadius: "10px",
+
 };
 
 const frameStyle = {
@@ -13,9 +14,14 @@ const frameStyle = {
 }
 
 const translateButtonStyle = {
-    padding: "9px", 
+    padding: "10px", 
     borderRadius: "10px", 
     margin: "2px"
+}
+
+const translationConfig = {
+    required: true,
+    maxLength: 40,
 }
 
 const TranslationForm = ({onTranslate}) => {
@@ -27,7 +33,7 @@ const TranslationForm = ({onTranslate}) => {
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset style={frameStyle}>
-                <input style={translateButtonStyle} type="text" {...register("TranslationInput", {required: true})} placeholder="Write here"/>
+                <input style={translateButtonStyle} type="text" {...register("TranslationInput", translationConfig)} placeholder="Write here"/>
                 <button style={inputStyle} type="submit">Translate</button>
             </fieldset>
         </form>
