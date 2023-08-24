@@ -31,13 +31,34 @@ const ProfileActions = () => {
         storageSave(STORAGE_KEY_USER, updatedUser);
         setUser(updatedUser);
     }
+    //Style
+    const logoutBtn = {
+        all: "unset",
+        fontSize: "16px",
+        backgroundColor: "darkred",
+        padding: "5px 15px",
+        borderRadius: "50px",
+        fontWeight: "bold",
+        cursor: "pointer",
+        color:"white"
+      };
+
+      const clearBtn = {
+        all: "unset",
+        fontSize: "16px",
+        color: "darkred",
+        padding: "5px 15px",
+        fontWeight: "bold",
+        cursor: "pointer"
+      };
+
+      const wrapper = {display: "flex", justifyContent: "space-between"}
 
     return(
-        <ul>
-            <li><Link to="/translation">Translations</Link></li>
-            <li><button onClick={handleClearHistoryClick}>Clear history</button></li>
-            <li><button onClick={handleLogoutClick}>Logout</button></li>
-        </ul>
+        <div style={wrapper}>
+            <button onClick={handleClearHistoryClick} style={clearBtn}>Clear history</button>
+            <button onClick={handleLogoutClick} style={logoutBtn}>Logout</button>
+        </div>
     );
 }
 export default ProfileActions;

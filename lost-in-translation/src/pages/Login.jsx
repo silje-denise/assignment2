@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Header from "../components/Header";
 import LoginForm from "../components/LoginForm";
 
 const Login = () => {
@@ -9,10 +7,10 @@ const Login = () => {
     display: "flex",
     justifyContent: "center",
     padding: "20px",
-    backgroundColor: "lightpink",
-    fontSize: "30px",
+    backgroundColor: "#CFB997",
+    fontSize: "23px",
   };
-  const inputSection = {
+  const wrapper = {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
@@ -25,14 +23,11 @@ const Login = () => {
 
   //The LoginForm takes care of the login
   return (
-    <div>
-      <Header />
       <main style={main}>
-        <div style={inputSection}>
+        <div style={wrapper}>
             <LoginForm />
         </div>
       </main>
-    </div>
   );
 };
 

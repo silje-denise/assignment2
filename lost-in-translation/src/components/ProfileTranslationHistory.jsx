@@ -6,9 +6,10 @@ const ProfileTranslationHistory = (props) => {
     //TODO: display only the last 10 translations
     const translationList = props.translations.map(
         (translation, index) => <ProfileTranslationHistoryItem key={index + '-' + translation} translation={translation}/>)
+    
     return(
         <section>
-            <h4>Your translation history</h4>
+            <div>Your translation history:</div>
             <ul>{translationList}</ul>
         </section>
     );
