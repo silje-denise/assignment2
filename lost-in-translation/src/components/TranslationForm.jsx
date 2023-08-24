@@ -1,5 +1,4 @@
 import {useForm} from "react-hook-form";
-import { translationAdd } from "../api/translate";
 
 const inputStyle = {
     backgroundColor: "white", 
@@ -20,16 +19,17 @@ const translateButtonStyle = {
     margin: "2px"
 }
 
+//Requirements for the input to be valid
 const translationConfig = {
     required: true,
     maxLength: 40,
+    pattern: /^[A-Za-z ]+$/
 }
 
 const TranslationForm = ({onTranslate}) => {
-
+    //Event handler
     const{ register, handleSubmit} = useForm()
-
-    const onSubmit = ({TranslationInput}) => {onTranslate(TranslationInput)}
+    const onSubmit = async ({TranslationInput}) => {onTranslate(TranslationInput);}
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}>

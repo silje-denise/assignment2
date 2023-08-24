@@ -3,22 +3,17 @@ import withAuth from "../hoc/withAuth";
 import TranslationForm from "../components/TranslationForm";
 import TranslateInput from "../components/TranslateOutput";
 import { useState } from "react";
-//import { useUser } from "../context/UserContext";
 import { translationAdd } from "../api/translate";
 
 const Translations = () => {
 
     const [outputState, setOutputState] = useState()
 
+    //
     const handleTranslationClicked =  input => {
         setOutputState(TranslateInput(input))
-        return
+        translationAdd(input)
     }
-
-   // const [error, result] = translationAdd(outputState())
-
-   // console.log("Error", error);
-   // console.log("Result", result);
 
     return(
         <>
