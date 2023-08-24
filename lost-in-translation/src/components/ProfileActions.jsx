@@ -4,7 +4,7 @@ import { useUser } from "../context/UserContext";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
 
 // The actions to be done at the profile page
-const ProfileActions = ({}) => {
+const ProfileActions = () => {
 
     const {setUser} = useUser();
 
