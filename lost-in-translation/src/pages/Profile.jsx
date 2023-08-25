@@ -1,6 +1,6 @@
-import ProfileActions from "../components/ProfileActions";
-import ProfileHeader from "../components/ProfileHeader";
-import ProfileTranslationHistory from "../components/ProfileTranslationHistory";
+import ProfileActions from "../components/Profile/ProfileActions";
+import ProfileHeader from "../components/Profile/ProfileHeader";
+import ProfileTranslationHistory from "../components/Profile/ProfileTranslationHistory";
 import withAuth from "../hoc/withAuth";
 import { useUser } from "../context/UserContext";
 

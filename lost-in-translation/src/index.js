@@ -7,7 +7,7 @@ import Translation from './pages/Translation';
 import Profile from './pages/Profile';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import AppContext from './context/AppContext';
-import Navbar from './components/Navbar';
+import Navbar from './components/Common/Navbar';
 
   export default function App() {
     return (
