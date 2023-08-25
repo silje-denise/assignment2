@@ -3,7 +3,8 @@ import {useForm} from "react-hook-form";
 const inputStyle = {
     backgroundColor: "white", 
     padding: "9px", 
-    borderRadius: "10px"
+    borderRadius: "10px",
+
 };
 
 const frameStyle = {
@@ -13,22 +14,27 @@ const frameStyle = {
 }
 
 const translateButtonStyle = {
-    padding: "9px", 
+    padding: "10px", 
     borderRadius: "10px", 
     margin: "2px"
 }
 
-const TranslationForm = ({onOrder}) => {
+//Requirements for the input to be valid
+const translationConfig = {
+    required: true,
+    maxLength: 40,
+    pattern: /^[A-Za-z ]+$/
+}
 
+const TranslationForm = ({onTranslate}) => {
+    //Event handler
     const{ register, handleSubmit} = useForm()
-
-    const onSubmit = ({TranslationInput}) => { onOrder(TranslationInput)}
+    const onSubmit = async ({TranslationInput}) => {onTranslate(TranslationInput);}
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset style={frameStyle}>
-                <label htmlFor="TranslationInput"></label>
-                <input style={translateButtonStyle} type="text" {...register("TranslationInput")} placeholder="Write here"/>
+                <input style={translateButtonStyle} type="text" {...register("TranslationInput", translationConfig)} placeholder="Write here"/>
                 <button style={inputStyle} type="submit">Translate</button>
             </fieldset>
         </form>

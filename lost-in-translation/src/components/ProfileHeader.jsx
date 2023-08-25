@@ -1,7 +1,7 @@
 const ProfileHeader = (props) => {
   return (
     <header>
-      <h4>Welcome back {props.username}</h4>
+      <h2>Welcome back {props.username}!</h2>
     </header>
   );
 };

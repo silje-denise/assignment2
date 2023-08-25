@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import ProfileActions from "../components/ProfileActions";
 import ProfileHeader from "../components/ProfileHeader";
 import ProfileTranslationHistory from "../components/ProfileTranslationHistory";
@@ -6,16 +5,35 @@ import withAuth from "../hoc/withAuth";
 import { useUser } from "../context/UserContext";
 
 const Profile = () => {
-
     const {user} = useUser();
 
+    //Style
+    const main = {
+        display: "flex",
+        justifyContent: "center",
+        padding: "20px",
+        backgroundColor: "#CFB997",
+        fontSize: "23px",
+      };
+      const wrapper = {
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "20px",
+        backgroundColor: "white",
+        margin: "0 50px",
+        fontSize: "23x",
+        borderRadius: "15px",
+      };
+
     return(
-        <div>
-            <Header></Header>
+        <main style={main}>
+        <div style={wrapper}>
             <ProfileHeader username={user.username}/>
-            <ProfileActions/>
             <ProfileTranslationHistory translations={user.translations}/>
+            <ProfileActions/>
         </div>
+        </main>
     );
 }
 
