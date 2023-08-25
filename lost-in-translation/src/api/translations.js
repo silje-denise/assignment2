@@ -6,7 +6,7 @@ const apiURL = process.env.REACT_APP_API_URL;
 //In this case, we want to update the translations to be empty, thus "deleting" the data
 export const translationClearHistory = async (userId) => {
     try {
-        const response = await fetch(`${apiURL}/${userId}`,{
+        const response = await fetch(`${apiURL}/translations/${userId}`,{
             method: 'PATCH',
             headers: createHeaders(),
             body: JSON.stringify({
