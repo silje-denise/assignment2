@@ -19,6 +19,7 @@ import Navbar from './components/Common/Navbar';
             <Route path = "/" element={ <Login/>  } />
             <Route path = "/translation" element={ <Translation/>  } />
             <Route path = "/profile" element={ <Profile/>  } />
+            <Route path = "*" element={ <Login/>  } />
           </Routes>
         </div>
       </BrowserRouter>
