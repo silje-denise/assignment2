@@ -13,10 +13,13 @@ const usernameConfig = {
 };
 
 const LoginForm = () => {
-
-// Hooks
-  const {register,handleSubmit,formState: { errors },} = useForm();
-  const {user, setUser} = useUser();
+  // Hooks
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const { user, setUser } = useUser();
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
@@ -24,12 +27,12 @@ const LoginForm = () => {
 
   // Redirect if user exists
   useEffect(() => {
-    if(user !== null){
-        navigate('profile');
+    if (user !== null) {
+      navigate("translation");
     }
-  },[user, navigate]); // Run once
+  }, [user, navigate]); // Run once
 
-// Event handler
+  // Event handler
   const onSubmit = async ({ username }) => {
     setLoading(true);
     const [error, userResponse] = await loginUser(username);
@@ -57,11 +60,32 @@ const LoginForm = () => {
     }
   })();
 
+  //Style
+  const styledFieldset = {
+    border: "none",
+    gap: "20px",
+    display: "flex",
+    fontSize: "20px",
+  };
+  const styledButton = {
+    all: "unset",
+    fontSize: "16px",
+    backgroundColor: "rgb(207, 185, 151)",
+    padding: "5px 15px",
+    borderRadius: "50px",
+    display: "flex",
+    alignSelf: "flex-end",
+    margin: "10px",
+    fontWeight: "bold",
+    cursor: "pointer"
+  };
+  const wrapper = { display: "flex", flexDirection: "column" };
+
   return (
     <>
       <h2>What's your name?</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset>
+      <form onSubmit={handleSubmit(onSubmit)} style={wrapper}>
+        <fieldset style={styledFieldset}>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -71,7 +95,7 @@ const LoginForm = () => {
           {errorMessage}
         </fieldset>
         {/* When the user attempt to log in, the page will load and the button will be disabled until the function returns a response */}
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} style={styledButton}>
           Continue
         </button>
         {loading && <p>Logging in...</p>}

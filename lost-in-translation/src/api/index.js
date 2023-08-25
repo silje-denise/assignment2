@@ -7,6 +7,3 @@ export const createHeaders = () => {
         'x-api-key': apiKey
     }
 }
-export const handleResponse = () => {
-    //Implement
-}

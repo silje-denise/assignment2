@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import withAuth from "../hoc/withAuth";
 import TranslationForm from "../components/TranslationForm";
 import TranslateInput from "../components/TranslateOutput";
@@ -18,7 +17,6 @@ const Translations = () => {
     return(
         <>
             <div>
-                <Header></Header>
                 <TranslationForm onTranslate={handleTranslationClicked}/>
                 {outputState}
             </div>
