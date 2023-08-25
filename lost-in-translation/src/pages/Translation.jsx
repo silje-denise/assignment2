@@ -1,8 +1,8 @@
 import withAuth from "../hoc/withAuth";
-import TranslationForm from "../components/TranslationForm";
-import TranslateInput from "../components/TranslateOutput";
+import TranslationForm from "../components/Translations/TranslationForm";
+import TranslateInput from "../components/Translations/TranslateOutput";
 import { useState } from "react";
-import { translationAdd } from "../api/translate";
+import { translationAdd } from "../api/translations";
 
 const Translations = () => {
 

@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
-import { loginUser } from "../api/user";
+import { loginUser } from "../../api/user";
 import { useState, useEffect } from "react";
-import { storageSave } from "../utils/storage";
+import { storageSave } from "../../utils/storage";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../context/UserContext";
-import { STORAGE_KEY_USER } from "../const/storageKeys";
+import { useUser } from "../../context/UserContext";
+import { STORAGE_KEY_USER } from "../../const/storageKeys";
 
 // The user is required to type in a username longer than 2 characters
 const usernameConfig = {

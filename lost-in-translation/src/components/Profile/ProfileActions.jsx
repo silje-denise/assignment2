@@ -1,7 +1,7 @@
-import { storageDelete, storageSave } from "../utils/storage";
-import { useUser } from "../context/UserContext";
-import { STORAGE_KEY_USER } from "../const/storageKeys";
-import { translationClearHistory } from "../api/translations";
+import { storageDelete, storageSave } from "../../utils/storage";
+import { useUser } from "../../context/UserContext";
+import { STORAGE_KEY_USER } from "../../const/storageKeys";
+import { translationClearHistory } from "../../api/translations";
 
 // The actions to be done at the profile page
 const ProfileActions = () => {
