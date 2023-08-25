@@ -9,8 +9,8 @@ const ProfileTranslationHistory = (props) => {
         translation={translation}
       />
     ))
+    .slice(-10) //Prints out only the last 10 translations
     .reverse() //Prints the translations in the reverse order, the newest translations first
-    .slice(-10); //Prints out only the last 10 translations
     
 
   return (
