@@ -50,7 +50,7 @@ export const translationAdd = async (input) => {
         });
 
         const data = await response.json();
-        console.log("Response:", data);
+        return [null, data]
     } catch (error) {
         console.error("Error:", error);
     }
